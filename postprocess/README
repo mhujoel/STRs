@@ -1,0 +1,43 @@
+We want to assign IRRs extracted via extractLongSTRs to loci. 
+
+Prior to assignment we have to prepare 3 files : 
+motif_2to6bp_correspondence_perfectIRR_noRepeat.txt.gz : contains 2-6 base pair repeat reference motifs (as well as circularizations and reverse complements thereof) and sequence composed of repeat motif
+polyEUR_2to6bp_noHomopolymer_nonRepetitive_DiseaseSTRadded_STRs.txt.gz : EUR polymorphic STR from Ziaei Jam et al. considered in our study
+polyEUR_2to6bp_noHomopolymer_nonRepetitive_DiseaseSTRadded_STRs_loci.txt : locations (chr:bp [rounded to Mb]) of loci in STR table
+
+To obtain these three files, in a directory with format_STR_table.R  make_motif_table.R  prep_files.sh run:  bash prep_files.sh 150
+where 150 represents the length of reads (150 for 1000G, 151 for UK Biobank)
+# note: you need R installed; dplyr library installed; and an R version compatible with downloading gtools
+
+To then assign the IRRs, in the directory with the 3 files mentioned above, as well as clean_IRR_1.sh; final_clean.R; initial_clean.R and a reference fasta
+# note: you need R that has the following libraries: dplyr; stringr; stringdist 
+
+bash clean_IRR_1.sh ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240193/HG00118.final.cram HG00118.reads.txt.gz
+
+output is clean_HG00118.txt which contains the following columns:
+
+IID: ID of the individual 
+locus ID Chrom Start End : repeat locus location
+refMotif/refMotifReverseComplement  : repeat locus motif
+Gene : potential overlap with genes listed in GENCODE 
+het_EUR : EUR heterozygosity
+5 sets of 3 columns: (1) number of anchored IRR, (2) number of IRR pairs, and (3) whether IRR pair can be assigned to a locus (only repeat locus with given motif + anchored IRR); 5 sets correspond to different definitions of IRR:
+nAnchorIrr nIRRpairs assignIRRpair : 
+nStrictAnchorIrr nIRRpairs_Strict assignStrictIRRpair : 145 base pairs of pure repeat
+nStrictAnchorIrr_H2 nIRRpairs_Strict_H2 assignStrictIRRpair_H2 : Hamming distance <= 2 to perfect repeat sequence
+nStrictAnchorIrr_H3 nIRRpairs_Strict_H3 assignStrictIRRpair_H3 : Hamming distance <= 3 to perfect repeat sequence
+nStrictAnchorIrr_H4 nIRRpairs_Strict_H4 assignStrictIRRpair_H4 : Hamming distance <= 4 to perfect repeat sequence
+
+To see loci for which the individual has at least 1 strict IRR as per the definition in our manuscript (Hamming distance <= 3 or 4) we can run:
+awk '$20 >0 || $23 > 0{print $1,$3,$7,$20,$23}' clean_HG00118.txt | head | column -t
+
+IID      ID                         refMotif  nStrictAnchorIrr_H3  nStrictAnchorIrr_H4
+HG00118  chr11:119647162-119647223  AC        1                    1
+HG00118  chr12:24538599-24538643    AC        1                    1
+HG00118  chr12:32904174-32904198    AAGG      1                    1
+HG00118  chr12:42613759-42613827    AC        1                    1
+HG00118  chr13:30205926-30205983    AC        1                    1
+HG00118  chr19:14774675-14774689    AAAG      5                    5
+HG00118  chr19:19744129-19744143    AAAGG     7                    7
+HG00118  chr19:39230087-39230101    AAAGG     10                   10
+HG00118  chr1:111457312-111457341   AC        1                    1
