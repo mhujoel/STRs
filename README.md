@@ -1,4 +1,4 @@
-# Pipeline of bash and R scripts for methods described in "Insights into the causes and consequences of DNA repeat expansions from 900,000 biobank participants"
+# Bash and R scripts for methods described in "Insights into the causes and consequences of DNA repeat expansions from 900,000 biobank participants"
 
 We provide the following components:
 
