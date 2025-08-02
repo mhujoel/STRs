@@ -8,7 +8,7 @@ To determine which loci have signal of somatic instability in UK Biobank, this s
 
 4) For each haplotype, extracts a given number (``$IBS_NBRS``) of IBS matches at the given locus and uses these to impute the number of IRRs at the locus for each individual's haplotype.
 
-** Note the script currently does not adjust the number of IRRs for coverage; to adjust for coverage the scripts have to be modified (notes on how to do so are within the scripts). Some notes on extracting coverage from DRAGEN output is provided in extract coverage.sh.
+** Note the script currently does not adjust the number of IRRs for coverage; to adjust for coverage the scripts have to be modified (notes on how to do so are within the scripts). Some notes on extracting coverage from DRAGEN output is provided in ``extract_coverage.sh``.
 
 5) Residualizes and crops the number of IRRs (with a Hamming distance of 3 or 4) and associates this measurement with age, chr2:47416318:G:A (MSH2) and chr5:80638411:G:T (MSH3) conditioning on 10 genetic principal components and genetic sex.
 
