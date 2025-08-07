@@ -2,6 +2,7 @@
 We want to assign IRRs extracted via extractLongSTRs to loci. 
 
 Prior to assignment we have to prepare 3 files : 
+
 ``motif_2to6bp_correspondence_perfectIRR_noRepeat.txt.gz`` : contains 2-6 base pair repeat reference motifs (as well as circularizations and reverse complements thereof) and sequence composed of repeat motif
 
 ``polyEUR_2to6bp_noHomopolymer_nonRepetitive_DiseaseSTRadded_STRs.txt.gz`` : EUR polymorphic STR from Ziaei Jam et al. considered in our study
