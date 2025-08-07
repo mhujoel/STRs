@@ -86,11 +86,11 @@ mismatch_bases <- function(strand,jump,som_seq,som_qual,seq,start,end,L_flank_se
   }
   
   # SEQ mismatch score for the flank at the beginning of the read. 
-  # Currently we check SEQ and QUAL at the end of the read to look for PCR error. 
-  # It now strikes me that misalignments will often cause SEQ to mismatch at the beginning of the read,
-  # so I think we could easily filter most such errors by computing (1) score = mismatch rate; and 
-  # (2) # of base pairs checked. For this check I'd restrict to reasonable-quality bases (QUAL>=':'),
-  # for which I think we'd expect to see near-0 mismatches.
+  # We check SEQ and QUAL at the end of the read to look for PCR error. 
+  # Misalignments will often cause SEQ to mismatch at the beginning of the read,
+  # filter most such errors by computing (1) score = mismatch rate; and 
+  # (2) # of base pairs checked. For this check restrict to reasonable-quality bases (QUAL>=':'),
+  # for which we'd expect to see near-0 mismatches.
   if(strand == "reverse"){ 
     locs_E = as.data.frame(stringr::str_locate(seq,end)); 
     locs_E_som = as.data.frame(stringr::str_locate(som_seq,end));
