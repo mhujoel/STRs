@@ -1,4 +1,4 @@
-# Code and scripts for methods described in "Insights into the causes and consequences of DNA repeat expansions from 900,000 biobank participants"
+# Code and scripts for methods described in "Causes and consequences of DNA repeat expansions among 900,000 biobank participants"
 
 We provide the following components:
 
