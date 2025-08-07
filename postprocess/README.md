@@ -37,7 +37,7 @@ The output is ``clean_HG00118.txt`` which contains the following columns:
 
 5 sets of 3 columns: (1) number of anchored IRR, (2) number of IRR pairs, and (3) whether IRR pair can be assigned to a locus (only repeat locus with given motif + anchored IRR); 5 sets correspond to different definitions of IRR: 
 
-``nAnchorIrr nIRRpairs assignIRRpair``: motif appeared in the read at least 70, 45, 32, 25, or 20 times for di-, tri-, tetra-,
+``nAnchorIrr nIRRpairs assignIRRpair``: motif appeared in the read greater than 70, 45, 32, 25, or 20 times for di-, tri-, tetra-,
 penta-, and hexa-nucleotide motifs
 
 ``nStrictAnchorIrr nIRRpairs_Strict assignStrictIRRpair``: 145 base pairs of pure repeat
