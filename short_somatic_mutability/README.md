@@ -15,12 +15,19 @@ The output is ``summary_somatic_HG00259.txt`` (included).
 The columns are:
 
 ``V1`` : ID of individual
+
 ``V3`` : length of repeat sequence (in base pairs)
+
 ``V4`` : repeat sequence of read
+
 ``jump`` : jump (in repeat units) of sequence from main allele (-2,-1,1,2); for main alleles jump is coded as NA
+
 ``fromLEN`` : length of repeat sequence (in base pairs) from which the read may have potentially somatically expanded/contracted from
+
 ``A1len A1midconsensus`` : repeat length (in base pairs) and consensus sequence of main allele 1
+
 ``A2len A2midconsensus`` : repeat length (in base pairs) and consensus sequence of main allele 2
+
 ``somatic_neg2 somatic_neg1 somatic_pos1 somatic_pos2``:  indication if the read passes the "potentially-somatic" filters (1 if passes,0 otherwise) if the read originated from a -2, -1, +1, +2 jump 
 
 
