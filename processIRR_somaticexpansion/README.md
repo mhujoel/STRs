@@ -1,6 +1,6 @@
 To determine which loci have signal of somatic instability in UK Biobank, this script, given a ``LOCUS`` to test, will:
 
-1) extract IRRs of given locus across UK Biobank; assumes the IRRs have been extracted and assigned as is described in the ``postprocess`` folder and collapsed across individuals with no header line. Currently the script assumes these files have been batched into 205 batches, labeled 0 to 204, and gzipped in the directory: ``${UKB_FILE}``. E.g. the script extracts individuals with IRRs at the locus from the files: ``${UKB_FILE}batch{0..204}_output.txt.gz``
+1) extract IRRs of given locus across UK Biobank; assumes the IRRs have been extracted and assigned as is described in the ``postprocess`` folder and collapsed across individuals with no header line. Currently the script assumes these files have been batched into 205 batches, labeled 0 to 204, and gzipped in the directory: ``${UKB_FILE}``. I.e. the script extracts individuals with IRRs at the locus from the files: ``${UKB_FILE}batch{0..204}_output.txt.gz``
 
 2) Extracts, from ``$RAP_DATASET``, Genetic sex (``participant.p22001``), Age at recruitment (``participant.p21022``), Genetic ethnic grouping (``participant.p22006``), and 10 genetic principal components (``participant.p22009_a{1..10}``)
 
