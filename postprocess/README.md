@@ -3,8 +3,11 @@ We want to assign IRRs extracted via extractLongSTRs to loci.
 
 Prior to assignment we have to prepare 3 files : 
 ``motif_2to6bp_correspondence_perfectIRR_noRepeat.txt.gz`` : contains 2-6 base pair repeat reference motifs (as well as circularizations and reverse complements thereof) and sequence composed of repeat motif
+
 ``polyEUR_2to6bp_noHomopolymer_nonRepetitive_DiseaseSTRadded_STRs.txt.gz`` : EUR polymorphic STR from Ziaei Jam et al. considered in our study
+
 ``polyEUR_2to6bp_noHomopolymer_nonRepetitive_DiseaseSTRadded_STRs_loci.txt`` : locations (chr:bp [rounded to Mb]) of loci in STR table
+
 
 To obtain these three files, in a directory with ``format_STR_table.R``  ``make_motif_table.R``  ``prep_files.sh`` run:  
 ```
