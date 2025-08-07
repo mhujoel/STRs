@@ -24,17 +24,29 @@ bash clean_IRR_1.sh ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240193/HG00118.f
 ```
 The output is ``clean_HG00118.txt`` which contains the following columns:
 
+
 ``IID``: ID of the individual 
+
 ``locus ID Chrom Start End``: repeat locus location
+
 ``refMotif/refMotifReverseComplement``: repeat locus motif
+
 ``Gene``: potential overlap with genes listed in GENCODE 
+
 ``het_EUR``: EUR heterozygosity
-5 sets of 3 columns: (1) number of anchored IRR, (2) number of IRR pairs, and (3) whether IRR pair can be assigned to a locus (only repeat locus with given motif + anchored IRR); 5 sets correspond to different definitions of IRR:
+
+5 sets of 3 columns: (1) number of anchored IRR, (2) number of IRR pairs, and (3) whether IRR pair can be assigned to a locus (only repeat locus with given motif + anchored IRR); 5 sets correspond to different definitions of IRR: 
+
 ``nAnchorIrr nIRRpairs assignIRRpair``: 
+
 ``nStrictAnchorIrr nIRRpairs_Strict assignStrictIRRpair``: 145 base pairs of pure repeat
+
 ``nStrictAnchorIrr_H2 nIRRpairs_Strict_H2 assignStrictIRRpair_H2``: Hamming distance <= 2 to perfect repeat sequence
+
 ``nStrictAnchorIrr_H3 nIRRpairs_Strict_H3 assignStrictIRRpair_H3``: Hamming distance <= 3 to perfect repeat sequence
+
 ``nStrictAnchorIrr_H4 nIRRpairs_Strict_H4 assignStrictIRRpair_H4``: Hamming distance <= 4 to perfect repeat sequence
+
 
 To see loci for which the individual has at least 1 strict IRR as per the definition in our manuscript (Hamming distance <= 3 or 4) we can run:
 ```
