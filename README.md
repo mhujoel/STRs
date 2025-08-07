@@ -7,7 +7,8 @@ We provide the following components:
 3)	Pipeline for further processing IRR measurements into somatic expansion phenotypes and running GWAS and PheWAS on the UKB-RAP platform. This pipeline includes code that imputes inherited allele lengths (which are used to generate somatic expansion phenotypes) using phased SNP-haplotypes available on UKB-RAP. See ``processIRR_somaticexpansion``
 4)	Pipeline for assessing somatic mutability of short alleles at a given STR locus (using base quality information to filter potential PCR stutter errors) including an example using 1000 Genomes Project data. See ``short_somatic_mutability``.
 5)	Pipeline for estimating germline mutation rates of alleles at a given STR locus (using analysis of IBD segments) using phased SNP-haplotypes available on UKB-RAP. We have provided an example using DRAGEN STR genotypes available on UKB-RAP. See ``germline_mutation_rates``.
-6)	C++ files are provided that implement estimation of inherited allele lengths (via imputation) and genotyping of mid-length AAAG repeat alleles at 2 loci. See ``cpp_files``.
+6)	Pipeline for quantifying mean somatic expansion of mid-length alleles of AAAG repeats at chr2:232.4Mb and chr19:14.8Mb including an example using 1000 Genomes Project data.
+7)	C++ files are provided that implement estimation of inherited allele lengths (via imputation) and genotyping of mid-length AAAG repeat alleles at 2 loci. See ``cpp_files``.
 
    
 The reference fasta can be downloaded here: https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.{fa,fa.fai}
