@@ -11,7 +11,9 @@ To compute germline instability rates in UK Biobank:
 ```
 	bash germline.sh PATH_TO_GENOTYPE_FILE LOCUS CHR BPHG19 NUMIBS ADJ_FACTOR
 ```
-in a directory with ``genetic_map_hg19_withX.txt.gz``, the executable ``computeIBSpbwt``, and the scripts ``phase_STR.R`` ``IBDpair_AncestralAllele.R`` and ``compute_GermlineMut_Rates.R``. ``NUMIBS`` is the number of haplotype matches per individual to extract in whole cohort; note that when phasing and looking at haplotype matches we restrict to individuals that are confident heterozygotes - and thus some haplotype matches may be dropped.
+in a directory with ``genetic_map_hg19_withX.txt.gz`` and ``autosome10k_ibdne.ne.txt``, the executable ``computeIBSpbwt``, and the scripts ``phase_STR.R`` ``IBDpair_AncestralAllele.R`` and ``compute_GermlineMut_Rates.R``. ``NUMIBS`` is the number of haplotype matches per individual to extract in whole cohort; note that when phasing and looking at haplotype matches we restrict to individuals that are confident heterozygotes - and thus some haplotype matches may be dropped.
+
+``autosome10k_ibdne.ne.txt`` contain estimates of effective population size in UK Biobank kindly provided by R. Cai and S. Browning (Cai, R., Browning, B. L. & Browning, S. R. Identity-by-descent-based estimation of the X chromosome effective population size with application to sex-specific demographic history. G3 (2023)).
 
 The outputs are:
  
