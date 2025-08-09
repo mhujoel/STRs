@@ -1,5 +1,5 @@
 # Piepline of bash and R scripts that post-process extracted reads to identify IRRs that match known STR loci
-We want to assign IRRs extracted via extractLongSTRs to loci. 
+We want to assign IRRs extracted via ``extractLongSTRs`` to loci. 
 
 Prior to assignment we have to prepare 3 files : 
 
@@ -18,11 +18,11 @@ where 150 represents the length of reads (150 for 1000G, 151 for UK Biobank)
 
 Note: you need R installed; ``dplyr`` library installed; and an R version compatible with downloading ``gtools``
 
-To then assign the IRRs, in the directory with the 3 files mentioned above, as well as ``clean_IRR_1.sh``; ``final_clean.R``; ``initial_clean.R`` and a reference fasta (note: you need R that has the following libraries: ``dplyr; stringr; stringdist``) you can run:
+To then assign the IRRs, in the directory with the 3 files mentioned above, the output from ``extractLongSTRs``, as well as ``clean_IRR_1.sh``; ``final_clean.R``; ``initial_clean.R`` and a reference fasta (note: you need R that has the following libraries: ``dplyr; stringr; stringdist``) you can run:
 ```
 bash clean_IRR_1.sh ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR324/ERR3240193/HG00118.final.cram HG00118.reads.txt.gz
 ```
-The output is ``clean_HG00118.txt`` which contains the following columns:
+where the last argument (``HG00118.reads.txt.gz``) is a gzipped file containing the output from ``extractLongSTRs``. The output is ``clean_HG00118.txt`` which contains the following columns:
 
 
 ``IID``: ID of the individual 
