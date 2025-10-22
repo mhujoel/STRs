@@ -1,4 +1,4 @@
-# Computational pipelines for analyses in "Causes and consequences of DNA repeat expansions among 900,000 biobank participants"
+# Computational pipelines for analyses in "Insights into DNA repeat expansions among 900,000 biobank participants"
 
 We provide the following components:
 
